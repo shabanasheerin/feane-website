@@ -3,7 +3,7 @@
 A responsive multi-page fast food restaurant website built with pure HTML, CSS, and JavaScript.
 
 ## 🌐 Live Demo
-[View Live Site](https://yourusername.github.io/feane-website)
+[View Live Site](https://shabanasheerin.github.io/feane-website/)
 
 ## 📸 Preview
 ![Feane Homepage](https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=80)
