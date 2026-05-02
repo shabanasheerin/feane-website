@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Feane</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Feane</a>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="book.html">Book Table</a></li>
+  </ul>
+  <div class="nav-icons">
+    <i class="fa-regular fa-bell"></i>
+    <div class="cart-wrapper">
+      <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+      <span class="cart-badge" id="cart-badge">0</span>
+    </div>
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <a href="menu.html" class="btn-order-nav">Order Online</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1>About Us</h1>
+  <p class="breadcrumb"><a href="index.html">Home</a><span>›</span>About</p>
+</div>
+
+<section class="about-story">
+  <div class="about-img">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&q=80" alt="Burger"/>
+  </div>
+  <div class="about-text">
+    <h2>We Are Feane</h2>
+    <p>Founded in 2010, Feane started as a small burger joint with a big dream — to serve the most delicious, freshest fast food in the city. Over the years, we've grown into a beloved restaurant destination, but our core values remain unchanged.</p>
+    <p>We believe that fast food doesn't have to mean low quality. Every ingredient we use is sourced fresh daily. Our chefs craft each dish with care, passion, and a commitment to flavor that you can taste in every single bite.</p>
+    <p>From our signature burgers to handcrafted pizzas and creamy pastas, Feane is where great taste meets great company.</p>
+    <a href="menu.html" class="btn-gold">Explore Our Menu</a>
+  </div>
+</section>
+
+<section class="stats-section">
+  <h2>Our Achievements</h2>
+  <div class="stats-grid">
+    <div class="stat-card"><i class="fa-solid fa-utensils"></i><div class="stat-number">500+</div><div class="stat-label">Menu Items Served</div></div>
+    <div class="stat-card"><i class="fa-solid fa-users"></i><div class="stat-number">50K+</div><div class="stat-label">Happy Customers</div></div>
+    <div class="stat-card"><i class="fa-solid fa-award"></i><div class="stat-number">15+</div><div class="stat-label">Awards Won</div></div>
+    <div class="stat-card"><i class="fa-solid fa-store"></i><div class="stat-number">12+</div><div class="stat-label">Years in Business</div></div>
+  </div>
+</section>
+
+<section class="team-section">
+  <h2>Meet Our Team</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=400&q=80" alt="Chef Marco"/>
+      <div class="team-card-body">
+        <h4>Chef Marco Rossi</h4><span>Head Chef</span>
+        <div class="team-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="team-card">
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80" alt="Chef Amara"/>
+      <div class="team-card-body">
+        <h4>Chef Amara Singh</h4><span>Pastry Chef</span>
+        <div class="team-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="team-card">
+      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="James Oliver"/>
+      <div class="team-card-body">
+        <h4>James Oliver</h4><span>Restaurant Manager</span>
+        <div class="team-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-simple">
+  <a href="index.html" class="nav-logo">Feane</a>
+  <p style="color:#555;font-size:0.82rem;">© 2026 All Rights Reserved By Feane</p>
+</footer>
+
+<!-- CART MODAL -->
+<div class="modal-overlay" id="cart-modal">
+  <div class="cart-modal">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-cart-shopping" style="color:var(--gold);margin-right:8px"></i>Your Cart</h3>
+      <button class="close-cart" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+      <div class="cart-total"><span>Total</span><span id="cart-total-price">$0</span></div>
+      <button class="btn-checkout" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toast-msg"></span></div>
+
+<script src="js/cart.js"></script>
+<script src="js/about.js"></script>
+</body>
+</html>

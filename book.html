@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book A Table - Feane</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Feane</a>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="book.html" class="active">Book Table</a></li>
+  </ul>
+  <div class="nav-icons">
+    <i class="fa-regular fa-bell"></i>
+    <div class="cart-wrapper">
+      <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+      <span class="cart-badge" id="cart-badge">0</span>
+    </div>
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <a href="menu.html" class="btn-order-nav">Order Online</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1>Book A Table</h1>
+  <p class="breadcrumb"><a href="index.html">Home</a><span>›</span>Book Table</p>
+</div>
+
+<section class="book-section">
+  <h2>Make A Reservation</h2>
+  <p>Reserve your table in advance and enjoy a seamless dining experience. We'll make sure everything is ready for you.</p>
+  <div class="book-layout">
+    <div class="book-form">
+      <div class="form-row">
+        <input type="text" id="book-name" placeholder="Your Name"/>
+        <input type="tel" id="book-phone" placeholder="Phone Number"/>
+      </div>
+      <input type="email" id="book-email" placeholder="Your Email"/>
+      <div class="form-row">
+        <select id="book-persons">
+          <option value="" disabled selected>How many persons?</option>
+          <option>1 Person</option><option>2 Persons</option>
+          <option>3 Persons</option><option>4 Persons</option><option>5+ Persons</option>
+        </select>
+        <input type="date" id="book-date"/>
+      </div>
+      <input type="time" id="book-time"/>
+      <textarea id="book-note" placeholder="Special requests or notes (optional)"></textarea>
+      <button class="btn-book" onclick="handleBooking()">Book Now</button>
+    </div>
+    <div class="book-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.3!2d80.2707!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzU3LjciTiA4MMKwMTYnMTQuNiJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="info-section">
+  <h2>Visit Us</h2>
+  <div class="info-grid">
+    <div class="info-card"><i class="fa-solid fa-location-dot"></i><h4>Our Location</h4><p>123 Food Street, Anna Nagar<br/>Chennai, Tamil Nadu 600040</p></div>
+    <div class="info-card"><i class="fa-solid fa-clock"></i><h4>Opening Hours</h4><p>Monday – Sunday<br/>10:00 AM – 10:00 PM</p></div>
+    <div class="info-card"><i class="fa-solid fa-phone"></i><h4>Contact Us</h4><p>+01 1234567890<br/>demo@gmail.com</p></div>
+  </div>
+</section>
+
+<footer class="footer-simple">
+  <a href="index.html" class="nav-logo">Feane</a>
+  <p style="color:#555;font-size:0.82rem;">© 2026 All Rights Reserved By Feane</p>
+</footer>
+
+<!-- CART MODAL -->
+<div class="modal-overlay" id="cart-modal">
+  <div class="cart-modal">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-cart-shopping" style="color:var(--gold);margin-right:8px"></i>Your Cart</h3>
+      <button class="close-cart" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+      <div class="cart-total"><span>Total</span><span id="cart-total-price">$0</span></div>
+      <button class="btn-checkout" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toast-msg"></span></div>
+
+<script src="js/cart.js"></script>
+<script src="js/book.js"></script>
+</body>
+</html>

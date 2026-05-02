@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feane - Fast Food Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo">Feane</a>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="book.html">Book Table</a></li>
+  </ul>
+  <div class="nav-icons">
+    <i class="fa-regular fa-bell"></i>
+    <div class="cart-wrapper">
+      <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+      <span class="cart-badge" id="cart-badge">0</span>
+    </div>
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <a href="menu.html" class="btn-order-nav">Order Online</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content">
+    <h1 id="hero-title">Fast Food Restaurant</h1>
+    <p id="hero-desc">Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde.</p>
+    <a href="menu.html" class="btn-gold">Order Now</a>
+    <div class="slider-dots">
+      <div class="dot" onclick="changeSlide(0)"></div>
+      <div class="dot" onclick="changeSlide(1)"></div>
+      <div class="dot active" onclick="changeSlide(2)"></div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img id="hero-img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=80" alt="Burger"/>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section id="offers">
+  <div class="offer-card">
+    <img class="offer-img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80" alt="Burger Offer"/>
+    <div class="offer-info">
+      <h3>Tasty Thursdays</h3>
+      <div class="offer-discount">20% <span>off</span></div>
+      <a href="menu.html" class="btn-offer">Order Now <i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </div>
+  <div class="offer-card">
+    <img class="offer-img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80" alt="Pizza Offer"/>
+    <div class="offer-info">
+      <h3>Pizza Days</h3>
+      <div class="offer-discount">15% <span>off</span></div>
+      <a href="menu.html" class="btn-offer">Order Now <i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- MENU PREVIEW -->
+<section id="menu-preview">
+  <h2>Our Menu</h2>
+  <p class="subtitle">Check out our most popular items</p>
+  <div class="menu-grid" id="menu-grid"></div>
+  <div class="view-more-wrap">
+    <a href="menu.html" class="btn-outline">View Full Menu</a>
+  </div>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section id="about-preview">
+  <div class="about-img">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&q=80" alt="Burger"/>
+  </div>
+  <div class="about-text">
+    <h2>We Are Feane</h2>
+    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+    <a href="about.html" class="btn-gold">Read More</a>
+  </div>
+</section>
+
+<!-- BOOK TABLE -->
+<section id="book">
+  <h2>Book A Table</h2>
+  <div class="book-layout">
+    <div class="book-form">
+      <input type="text" id="book-name" placeholder="Your Name"/>
+      <input type="tel" id="book-phone" placeholder="Phone Number"/>
+      <input type="email" id="book-email" placeholder="Your Email"/>
+      <select id="book-persons">
+        <option value="" disabled selected>How many persons?</option>
+        <option>1 Person</option><option>2 Persons</option>
+        <option>3 Persons</option><option>4 Persons</option><option>5+ Persons</option>
+      </select>
+      <input type="date" id="book-date"/>
+      <button class="btn-book" onclick="handleBooking()">Book Now</button>
+    </div>
+    <div class="book-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.3!2d80.2707!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzU3LjciTiA4MMKwMTYnMTQuNiJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <h2>What Says Our Customers</h2>
+  <div class="testimonial-track" id="testi-track"></div>
+  <div class="testi-controls">
+    <button class="testi-btn" onclick="changeTestimonial(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="testi-btn" onclick="changeTestimonial(1)"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <a href="#"><i class="fa-solid fa-location-dot"></i> 123 Food Street, Chennai</a>
+      <a href="tel:+011234567890"><i class="fa-solid fa-phone"></i> +01 1234567890</a>
+      <a href="mailto:demo@gmail.com"><i class="fa-solid fa-envelope"></i> demo@gmail.com</a>
+    </div>
+    <div class="footer-col" style="text-align:center">
+      <h3>Feane</h3>
+      <span class="footer-desc">Making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with handful of model sentence structures.</span>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+    <div class="footer-col" style="text-align:center">
+      <h3>Opening Hours</h3>
+      <p>Everyday</p>
+      <p>10:00 AM - 10:00 PM</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 All Rights Reserved By Feane</p>
+  </div>
+</footer>
+
+<!-- CART MODAL -->
+<div class="modal-overlay" id="cart-modal">
+  <div class="cart-modal">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-cart-shopping" style="color:var(--gold);margin-right:8px"></i>Your Cart</h3>
+      <button class="close-cart" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+      <div class="cart-total"><span>Total</span><span id="cart-total-price">$0</span></div>
+      <button class="btn-checkout" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toast-msg"></span></div>
+
+<script src="js/cart.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

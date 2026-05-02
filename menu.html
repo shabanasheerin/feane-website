@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu - Feane</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Feane</a>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html" class="active">Menu</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="book.html">Book Table</a></li>
+  </ul>
+  <div class="nav-icons">
+    <i class="fa-regular fa-bell"></i>
+    <div class="cart-wrapper">
+      <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+      <span class="cart-badge" id="cart-badge">0</span>
+    </div>
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <a href="menu.html" class="btn-order-nav">Order Online</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <h1>Our Menu</h1>
+  <p class="breadcrumb"><a href="index.html">Home</a><span>›</span>Menu</p>
+</div>
+
+<section class="menu-section">
+  <div class="filter-tabs">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="burger">Burger</button>
+    <button class="filter-tab" data-filter="pizza">Pizza</button>
+    <button class="filter-tab" data-filter="pasta">Pasta</button>
+    <button class="filter-tab" data-filter="fries">Fries</button>
+  </div>
+  <div class="menu-grid" id="menu-grid"></div>
+</section>
+
+<footer class="footer-simple">
+  <a href="index.html" class="nav-logo">Feane</a>
+  <p style="color:#555;font-size:0.82rem;">© 2026 All Rights Reserved By Feane</p>
+</footer>
+
+<!-- CART MODAL -->
+<div class="modal-overlay" id="cart-modal">
+  <div class="cart-modal">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-cart-shopping" style="color:var(--gold);margin-right:8px"></i>Your Cart</h3>
+      <button class="close-cart" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items-list"></div>
+    <div class="cart-footer" id="cart-footer" style="display:none">
+      <div class="cart-total"><span>Total</span><span id="cart-total-price">$0</span></div>
+      <button class="btn-checkout" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toast-msg"></span></div>
+
+<script src="js/cart.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>
